@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+   <h2 class="logo">
+  <a href="index.html">ClearDebtway</a>
+</h2>
+
+    <nav>
+      <a class="active" href="index.html">Dashboard</a>
+      <a href="#">Cases</a>
+      <a href="#">Payments</a>
+      <a href="documents.html">Documents</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <header class="topbar">
+      <h1>Dashboard</h1>
+      <button class="btn" onclick="openForm()">Fill Debt Form</button>
+    </header>
+
+    <section class="stats">
+      <div class="card">
+        <p>Total Loan</p>
+        <h2>₹4,250</h2>
+        <span class="up">+12%</span>
+      </div>
+
+      <div class="card">
+        <p>Paid Amount</p>
+        <h2>₹1,625</h2>
+        <span class="up">+8%</span>
+      </div>
+
+      <div class="card">
+        <p>Outstanding</p>
+        <h2>₹3,452</h2>
+        <span class="down">-4%</span>
+      </div>
+
+      <div class="card">
+        <p>Avg EMI</p>
+        <h2>₹802</h2>
+        <span class="up">+5%</span>
+      </div>
+    </section>
+
+    <section class="chart-card">
+      <h3>Total Revenue</h3>
+      <canvas id="revenueChart"></canvas>
+    </section>
+
+  </main>
+</div>
+
+<!-- ================= MODAL ================= -->
+<div id="caseModal" class="modal">
+  <div class="modal-content">
+
+    <span class="close" onclick="closeForm()">×</span>
+
+    <div class="form-header">
+      <h2>Debt Relief Application</h2>
+      <p>Your path to financial freedom starts here</p>
+    </div>
+
+    <form class="case-form">
+
+      <h3>1. Personal Information</h3>
+      <div class="form-grid">
+        <input type="text" placeholder="Borrower Full Name *">
+        <input type="tel" placeholder="Mobile Number *">
+        <input type="text" placeholder="Complete Address *" class="full">
+      </div>
+
+      <h3>2. Bank & Loan Details</h3>
+      <div class="form-grid">
+        <input type="text" placeholder="Bank Name *">
+        <input type="text" placeholder="Bank Branch Address">
+        <input type="text" placeholder="Loan Account Number *">
+        <input type="date">
+      </div>
+
+      <h3>3. Loan Amount Information</h3>
+      <div class="form-grid">
+        <input type="number" placeholder="Approved Loan Amount *">
+        <input type="number" placeholder="Amount Paid So Far *">
+        <select>
+          <option>Select Loan Type</option>
+          <option>Personal Loan</option>
+          <option>Home Loan</option>
+          <option>Credit Card</option>
+        </select>
+        <select>
+          <option>Select Collateral Type</option>
+          <option>Secured</option>
+          <option>Unsecured</option>
+        </select>
+      </div>
+
+      <h3>4. Payment Information (Optional)</h3>
+      <input type="text" placeholder="UPI Transaction ID">
+
+      <div class="form-actions">
+        <button type="button" class="cancel" onclick="closeForm()">Cancel</button>
+        <button type="submit" class="submit">Submit Application</button>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<script>
+/* Chart */
+new Chart(document.getElementById('revenueChart'), {
+  type: 'line',
+  data: {
+    labels: ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],
+    datasets: [{
+      data: [120, 190, 300, 250, 220, 310, 280],
+      borderColor: '#2563eb',
+      backgroundColor: 'rgba(37,99,235,0.15)',
+      fill: true,
+      tension: 0.4
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: { y: { beginAtZero: true } }
+  }
+});
+
+/* Modal JS */
+function openForm() {
+  document.getElementById("caseModal").style.display = "flex";
+}
+function closeForm() {
+  document.getElementById("caseModal").style.display = "none";
+}
+window.onclick = function(e) {
+  const modal = document.getElementById("caseModal");
+  if (e.target === modal) closeForm();
+}
+</script>
+
+</body>
+</html>

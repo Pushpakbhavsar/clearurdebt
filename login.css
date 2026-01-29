@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  height: 100vh;
+}
+
+/* Center page */
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+/* Card */
+.login-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 22px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* Brand */
+.brand {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.brand a {
+  text-decoration: none;
+  color: #2563eb;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.subtitle {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Fields */
+.field {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #334155;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  background: #f9fafb;
+}
+
+input:focus {
+  outline: none;
+  border-color: #2563eb;
+  background: #ffffff;
+}
+
+/* Options */
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0 22px;
+  font-size: 14px;
+}
+
+.options a {
+  text-decoration: none;
+  color: #2563eb;
+}
+
+/* Button */
+.login-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  opacity: 0.95;
+}
+
+/* Footer */
+.footer-text {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 14px;
+}
+
+.footer-text a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+   <h2 class="logo">
+  <a href="index.html">ClearDebtway</a>
+</h2>
+    <nav>
+      <a  href="index.html">Dashboard</a>
+      <a href="#">Cases</a>
+      <a href="#">Payments</a>
+      <a class="active" href="documents.html">Documents</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </aside>
+
+  <!-- Main -->
+  <main class="main">
+
+    <h1>Document Library</h1>
+    <p class="subtitle">View all documents related to your case</p>
+
+    <div class="card">
+      <h3>Upload Documents</h3>
+
+      <div class="upload-row">
+        <div>
+          <label>Document 1</label>
+          <input type="file">
+        </div>
+        <div>
+          <label>Document Type</label>
+          <select>
+            <option>Select document type</option>
+            <option>Aadhaar</option>
+            <option>PAN</option>
+            <option>Bank Statement</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="add-more">⬆ Add More Documents</div>
+
+      <button class="upload-btn" disabled>⬆ Upload All Documents</button>
+    </div>
+
+    <div class="card">
+      <h3>All Documents</h3>
+
+      <table>
+        <tr>
+          <th>Document Name</th>
+          <th>Type</th>
+          <th>Date</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>aadhaar.pdf</td>
+          <td>Aadhaar</td>
+          <td>15 Jan 2026</td>
+          <td>
+            <button class="action">View</button>
+            <button class="action danger">Delete</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
